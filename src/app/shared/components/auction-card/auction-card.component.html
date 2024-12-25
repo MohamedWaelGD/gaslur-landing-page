@@ -1,0 +1,18 @@
+<div class="flex flex-col gap-4">
+  <img [src]="auction().img" />
+  <div class="flex justify-between items-center">
+    <h3 class="font-semibold">{{ auction().title }}</h3>
+    <h3 class="font-medium">{{ auction().price }} Weth</h3>
+  </div>
+  <div class="h-px w-full bg-white"></div>
+  <div class="flex justify-between items-center">
+    <p class="text-gray-400">
+      Ends in <span class="text-white">{{ auction().endTime }}</span>
+    </p>
+    <button
+      class="border border-gray-200 rounded-xl px-5 py-1 hover:bg-white hover:bg-opacity-10 transition duration-200"
+    >
+      Bid
+    </button>
+  </div>
+</div>

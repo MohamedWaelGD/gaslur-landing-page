@@ -1,0 +1,39 @@
+<div class="flex flex-col gap-4">
+  <div class="flex justify-between items-center flex-wrap">
+    <h2 class="text-4xl font-semibold">Discover</h2>
+    <div class="flex flex-wrap gap-4">
+      <button class="flex items-center gap-4 px-4 py-2">
+        <i class="fa-solid fa-arrow-right"></i>
+        <span class="text-xl">Category</span>
+      </button>
+      <button class="flex items-center gap-4 px-4 py-2">
+        <span class="text-xl">Cheapest</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+      <button class="flex items-center gap-4 px-4 py-2">
+        <span class="text-xl">Newest</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+      <button
+        class="flex items-center gap-4 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-400 to-blue-500 hover:opacity-90 transition duration-200"
+      >
+        <i class="fa-solid fa-arrow-right"></i>
+        <span class="text-xl">Filter</span>
+      </button>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    @for (item of auctions(); track $index) {
+    <app-auction-card [auction]="item"></app-auction-card>
+    } @for (item of auctions(); track $index) {
+    <app-auction-card [auction]="item"></app-auction-card>
+    }
+  </div>
+  <div class="flex justify-center my-10">
+    <button
+      class="border border-gray-400 px-8 py-2 rounded-lg text-gray-400 font-medium hover:bg-white hover:opacity-10 transition duration-200"
+    >
+      LOAD MORE
+    </button>
+  </div>
+</div>

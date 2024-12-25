@@ -1,0 +1,16 @@
+<div class="flex flex-col gap-14 text-center">
+  <div class="flex flex-col gap-4">
+    <h2 class="text-3xl font-medium">Getting Started</h2>
+    <p class="text-xl">
+      Eu, molestie commodo, enim pellentesque turpis integer sagittis
+    </p>
+  </div>
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 relative">
+    <div class="w-full bg-gradient-to-r from-purple-400 to-blue-400 absolute h-full top-1/2 -translate-y-1/2 -z-[1] blur-3xl opacity-25"></div>
+    @for (item of gettingStarted(); track $index) {
+    <app-getting-started-card
+      [gettingStarted]="item"
+    ></app-getting-started-card>
+    }
+  </div>
+</div>

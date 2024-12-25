@@ -1,0 +1,20 @@
+.border-gradient {
+    padding: 1px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom right, #FB37FF, #9b6fee15, #7b7fea15, #1BB2DE); /* Gradient from top-left to bottom-right */
+        border-radius: 10px; /* Match border radius of the div */
+        z-index: -1; /* Place the gradient behind the content */
+      }
+}
+
+.border-gradient-inner {
+    background-color: #1F1D2B;
+    border-radius: 10px; /* Optional: makes the border rounded */
+}
