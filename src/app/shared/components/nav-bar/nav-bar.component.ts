@@ -11,7 +11,7 @@ import { gsap } from 'gsap';
 export class NavBarComponent implements OnInit {
   ngOnInit(): void {
     gsap.from('.brand-name', {
-      x: -100,
+      y: -100,
       opacity: 0,
       duration: 1,
     });
@@ -22,7 +22,7 @@ export class NavBarComponent implements OnInit {
       stagger: 0.1
     });
     gsap.from('nav .buttons', {
-      x: 100,
+      y: 100,
       opacity: 0,
       duration: 1,
     });

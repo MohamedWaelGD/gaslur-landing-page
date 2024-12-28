@@ -27,13 +27,13 @@ export class DiscoverComponent implements AfterViewInit {
     tl.add(
       gsap.from('.discover h2', {
         opacity: 0,
-        x: -100
+        y: -100
       })
     );
     tl.add(
       gsap.from('.discover .filter', {
         opacity: 0,
-        x: 100
+        y: 100
       }),
       "-=0.5"
     );

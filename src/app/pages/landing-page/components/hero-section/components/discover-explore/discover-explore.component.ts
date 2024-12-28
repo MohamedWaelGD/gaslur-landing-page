@@ -20,20 +20,20 @@ export class DiscoverExploreComponent implements OnInit {
     });
     tl.add(
       gsap.from('.intro h1', {
-        x: -100,
+        y: -100,
         opacity: 0,
       })
     );
     tl.add(
       gsap.from('.intro p', {
-        x: -100,
+        y: -100,
         opacity: 0,
       }),
       "-=0.2"
     );
     tl.add(
       gsap.from('.intro .buttons', {
-        x: -100,
+        y: -100,
         opacity: 0,
       }),
       "-=0.2"

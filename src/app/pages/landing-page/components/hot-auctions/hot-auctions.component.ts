@@ -25,13 +25,13 @@ export class HotAuctionsComponent implements AfterViewInit {
     });
     tl.add(
       gsap.from('.hot-auctions h2', {
-        x: -100,
+        y: -100,
         opacity: 0
       })
     );
     tl.add(
       gsap.from('.hot-auctions button', {
-        x: 100,
+        y: 100,
         opacity: 0
       }),
       '-=0.5'
