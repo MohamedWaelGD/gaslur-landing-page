@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import CSSRulePlugin from 'gsap/CSSRulePlugin';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +13,6 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 export class AppComponent {
   constructor() {
     gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(CSSRulePlugin);
   }
 }

@@ -12,10 +12,10 @@ export class DiscoverExploreComponent implements OnInit {
   ngOnInit(): void {
     const tl = gsap.timeline({
       scrollTrigger: {
-        markers: true,
         trigger: '.intro',
-        start: 'top center',
-        end: 'bottom bottom'
+        start: 'top bottom',
+        end: 'bottom bottom',
+        toggleActions: 'play none none reverse',
       }
     });
     tl.add(
