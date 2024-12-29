@@ -2,21 +2,22 @@
   <div class="flex justify-between items-center flex-wrap">
     <h2 class="text-4xl font-semibold">Discover</h2>
     <div class="flex flex-wrap gap-4 filter">
-      <button class="flex items-center gap-4 px-4 py-2">
+      <button aria-label="category" class="flex items-center gap-4 px-4 py-2">
         <svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1.73097 1H14.927M1.73097 5H10.8667M1.73097 9H7.82144M11.8818 9L15.9421 5M15.9421 5L20.0024 9M15.9421 5V17" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         <span class="text-xl">Category</span>
       </button>
-      <button class="flex items-center gap-4 px-4 py-2">
+      <button aria-label="cheapest" class="flex items-center gap-4 px-4 py-2">
         <span class="text-xl">Cheapest</span>
         <i class="fa-solid fa-chevron-down"></i>
       </button>
-      <button class="flex items-center gap-4 px-4 py-2">
+      <button aria-label="newest" class="flex items-center gap-4 px-4 py-2">
         <span class="text-xl">Newest</span>
         <i class="fa-solid fa-chevron-down"></i>
       </button>
       <button
+        aria-label="filter"
         class="flex items-center gap-4 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-400 to-blue-500 hover:opacity-90 transition duration-200"
       >
       <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,6 +36,7 @@
   </div>
   <div class="flex justify-center my-10">
     <button
+      aria-label="load-more"
       class="border border-gray-400 px-8 py-2 rounded-lg text-gray-400 font-medium hover:bg-white hover:opacity-10 transition duration-200"
     >
       LOAD MORE
