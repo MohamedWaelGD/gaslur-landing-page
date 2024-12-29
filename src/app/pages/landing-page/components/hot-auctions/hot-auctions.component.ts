@@ -4,7 +4,6 @@ import {
   Component,
   Inject,
   inject,
-  OnInit,
   PLATFORM_ID,
 } from '@angular/core';
 import { AuctionsService } from './services/auctions.service';

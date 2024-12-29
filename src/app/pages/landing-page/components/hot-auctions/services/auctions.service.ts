@@ -8,25 +8,25 @@ export class AuctionsService {
 
   private _auctions = signal<Auction[]>([
     {
-      img: '/images/auctions/unsplash_ruJm3dBXCqw.png',
+      img: '/images/auctions/unsplash_ruJm3dBXCqw.webp',
       title: 'Lorem Ipsum',
       price: 1.20,
       endTime: '01.34.45'
     },
     {
-      img: '/images/auctions/unsplash_9XngoIpxcEo.png',
+      img: '/images/auctions/unsplash_9XngoIpxcEo.webp',
       title: 'Dolor sit amet',
       price: 0.21,
       endTime: '01.34.45'
     },
     {
-      img: '/images/auctions/unsplash_wN9DU73b8_s.png',
+      img: '/images/auctions/unsplash_wN9DU73b8_s.webp',
       title: 'Dignissim curabitu..',
       price: 0.01,
       endTime: '56.44.45'
     },
     {
-      img: '/images/auctions/unsplash_7pQszt9KiEY.png',
+      img: '/images/auctions/unsplash_7pQszt9KiEY.webp',
       title: 'Amet pellentesq..',
       price: 0.55,
       endTime: '01.34.45'
