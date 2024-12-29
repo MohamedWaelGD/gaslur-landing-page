@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { gsap } from 'gsap';
 
 @Component({
@@ -8,8 +15,16 @@ import { gsap } from 'gsap';
   styleUrl: './nav-bar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavBarComponent implements OnInit {
-  ngOnInit(): void {
+export class NavBarComponent implements AfterViewInit {
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.animation();
+    }
+  }
+
+  animation(): void {
     gsap.from('.brand-name', {
       y: -100,
       opacity: 0,
@@ -19,7 +34,7 @@ export class NavBarComponent implements OnInit {
       y: -100,
       opacity: 0,
       duration: 1,
-      stagger: 0.1
+      stagger: 0.1,
     });
     gsap.from('nav .buttons', {
       y: 100,

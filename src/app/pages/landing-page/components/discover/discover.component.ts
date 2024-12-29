@@ -1,7 +1,8 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, Inject, inject, PLATFORM_ID } from '@angular/core';
 import { AuctionCardComponent } from "../../../../shared/components/auction-card/auction-card.component";
 import { AuctionsService } from '../hot-auctions/services/auctions.service';
 import gsap from 'gsap';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-discover',
@@ -14,7 +15,15 @@ export class DiscoverComponent implements AfterViewInit {
 
   protected auctions = inject(AuctionsService).auctions;
   
-  ngAfterViewInit(): void {
+    constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+  
+    ngAfterViewInit(): void {
+      if (isPlatformBrowser(this.platformId)) {
+        this.animation();
+      }
+    }
+  
+    animation(): void {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.discover',

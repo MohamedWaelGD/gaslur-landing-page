@@ -2,11 +2,14 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  Inject,
   inject,
+  PLATFORM_ID,
 } from '@angular/core';
 import { GettingStartedService } from './services/getting-started.service';
 import { GettingStartedCardComponent } from './components/getting-started-card/getting-started-card.component';
 import gsap from 'gsap';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-getting-started',
@@ -18,7 +21,15 @@ import gsap from 'gsap';
 export class GettingStartedComponent implements AfterViewInit {
   protected gettingStarted = inject(GettingStartedService).gettingStarted;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+
   ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.animation();
+    }
+  }
+
+  animation(): void {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.getting-started',
@@ -43,9 +54,9 @@ export class GettingStartedComponent implements AfterViewInit {
       gsap.from('.getting-started app-getting-started-card', {
         opacity: 0,
         y: 100,
-        stagger: 0.2
+        stagger: 0.2,
       }),
-      "-=0.2"
-    )
+      '-=0.2'
+    );
   }
 }

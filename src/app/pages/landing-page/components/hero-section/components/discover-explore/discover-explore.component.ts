@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import gsap from 'gsap';
 
 @Component({
@@ -9,7 +10,16 @@ import gsap from 'gsap';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DiscoverExploreComponent implements OnInit {
+
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+
   ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.animation();
+    }
+  }
+
+  private animation(){
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.intro',
